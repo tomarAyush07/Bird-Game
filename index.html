@@ -8,7 +8,6 @@
 </head>
 <body>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
 <canvas id="canvas"></canvas>
 </body>
 <script>
@@ -31,19 +30,19 @@ canvas.width = 320;
 canvas.height = 480;
 
 const birdImg1 = new Image();
-birdImg1.src = "https://assets.codepen.io/1290466/flappy-bird-1.png?format=auto";
+  birdImg1.src = "https://assets.codepen.io/1290466/flappy-bird-1.png?format=auto";
 const birdImg2 = new Image();
-birdImg2.src = "https://assets.codepen.io/1290466/flappy-bird-2.png?format=auto";
+  birdImg2.src = "https://assets.codepen.io/1290466/flappy-bird-2.png?format=auto";
 const birdImg3 = new Image();
-birdImg3.src = "https://assets.codepen.io/1290466/flappy-bird-3.png?format=auto";
+  birdImg3.src = "https://assets.codepen.io/1290466/flappy-bird-3.png?format=auto";
 const birdImg4 = new Image();
-birdImg4.src = "https://assets.codepen.io/1290466/flappy-bird-2.png?format=auto";
+  birdImg4.src = "https://assets.codepen.io/1290466/flappy-bird-2.png?format=auto";
 const backgroundImg = new Image();
-backgroundImg.src = "https://assets.codepen.io/1290466/flappy-bird-bg-bottom.jpg?format=auto";
+  backgroundImg.src = "https://assets.codepen.io/1290466/flappy-bird-bg-bottom.jpg?format=auto";
 const groundImg = new Image();
-groundImg.src = "https://assets.codepen.io/1290466/ground2.jpg?format=auto";
+  groundImg.src = "https://assets.codepen.io/1290466/ground2.jpg?format=auto";
 const pipesBackgroundImg = new Image();
-pipesBackgroundImg.src = "https://assets.codepen.io/1290466/pipe-bg.jpg?format=auto";
+  pipesBackgroundImg.src = "https://assets.codepen.io/1290466/pipe-bg.jpg?format=auto";
 
 const hitSound = new Audio("https://assets.codepen.io/1290466/flappy-bird-hit.mp3");
 const pointSound = new Audio("https://assets.codepen.io/1290466/flappy-bird-point.mp3");
@@ -56,12 +55,12 @@ const drawBackground = function() {
 };
 
 const scoreElement = document.createElement("span")
-scoreElement.textContent = 0;
-scoreElement.style.position = "absolute";
-scoreElement.style.left = "50%";
-scoreElement.style.top = "35px";
-scoreElement.style.transform = "translate(-50%, -50%)";
-document.body.appendChild(scoreElement);
+    scoreElement.textContent = 0;
+    scoreElement.style.position = "absolute";
+    scoreElement.style.left = "50%";
+    scoreElement.style.top = "35px";
+    scoreElement.style.transform = "translate(-50%, -50%)";
+    document.body.appendChild(scoreElement);
 
 const bird = {
   x: 50,
@@ -155,33 +154,33 @@ document.addEventListener("keydown", function(event) {
 });
 
 const playBtn = document.createElement("button")
-playBtn.innerText = "Play";
-playBtn.style.position = "absolute";
-playBtn.style.left = "50%";
-playBtn.style.top = "50%";
-playBtn.style.transform = "translate(-50%, -50%)";
-playBtn.addEventListener("click", function() {
-  document.body.removeChild(playBtn);
-  document.body.removeChild(helpText);
-  running = true;
-  score = 0;
-  pipes.length = 0;
-  addPipe();
-  gameLoop();
+  playBtn.innerText = "Play";
+  playBtn.style.position = "absolute";
+  playBtn.style.left = "50%";
+  playBtn.style.top = "50%";
+  playBtn.style.transform = "translate(-50%, -50%)";
+  playBtn.addEventListener("click", function() {
+    document.body.removeChild(playBtn);
+    document.body.removeChild(helpText);
+    running = true;
+    score = 0;
+    pipes.length = 0;
+    addPipe();
+    gameLoop();
 
-  backgroundMusic.loop = true;
-  backgroundMusic.play();
+    backgroundMusic.loop = true;
+    backgroundMusic.play();
 });
 
 document.body.appendChild(playBtn);
 
 const helpText = document.createElement("p")
-helpText.innerHTML = "TAP to jump on Mobile <br /><br /> SPACEBAR to jump on Destop";
-helpText.style.position = "absolute";
-helpText.style.left = "50%";
-helpText.style.top = "75%";
-helpText.style.transform = "translate(-50%, -50%)";
-document.body.appendChild(helpText);
+  helpText.innerHTML = "TAP to jump on Mobile <br /><br /> SPACEBAR to jump on Destop";
+  helpText.style.position = "absolute";
+  helpText.style.left = "50%";
+  helpText.style.top = "75%";
+  helpText.style.transform = "translate(-50%, -50%)";
+  document.body.appendChild(helpText);
 
 const gameLoop = function() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
